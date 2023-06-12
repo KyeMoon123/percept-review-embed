@@ -1,0 +1,27 @@
+<%- include("./partials/header") -%>
+<body class=" overflow-auto scrollbar-hide" >
+<div class ="gap-4 p-8  columns-1 md:columns-2 lg:columns-3 xl:columns-4 " style="background:<%= backgroundColor %>">
+
+    <% reviews.forEach((review)=>{ %>
+    <div class="mb-4 break-inside-avoid">
+        <div class="card  shadow-xl " style="background:<%= cardColor %>" >
+            <div class="card-body">
+                <div class="flex  space-x-4  ">
+                    <img src="<%= review.profileImageUrl %>" class="rounded-box  w-12 h-12" alt="...">
+                    <div>
+                        <h2 class="font-bold text-lg"  style="color:<%= textColor %>"><%= review.username %> </h2>
+                        <p class="text-sm" style="color:<%= textColor %>"><%= review.userDescription %></p>
+                    </div>
+                </div>
+                <div class="overflow-y-clip py-4 ">
+                    <p class="text-md font-semibold" style="color:<%= textColor %>">
+                        <%= review.body %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+
+</div>
+</body>
